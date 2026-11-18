@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:18
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
+      - postgres_data:/var/lib/postgresql
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+volumes:
+  postgres_data:

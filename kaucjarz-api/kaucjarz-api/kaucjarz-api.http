@@ -1,0 +1,25 @@
+@kaucjarz_api_HostAddress = http://localhost:5223
+
+GET {{kaucjarz_api_HostAddress}}/User/GetUser/
+Accept: application/json
+###
+POST {{kaucjarz_api_HostAddress}}/User/PostUser
+Content-Type: application/json
+
+{
+    "id":2,
+    "email":"testowymail@gm.co",
+    "name":"tester2",
+    "password":"test123"
+}
+###
+GET {{kaucjarz_api_HostAddress}}/User/VerifyLogin
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id":-1,
+  "email":"testowymail@gm.c",
+  "name":"tester12",
+  "password":"test123"
+}
