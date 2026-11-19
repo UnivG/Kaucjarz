@@ -1,0 +1,61 @@
+# ==========================================
+# .NET / ASP.NET Core / Visual Studio / Rider
+# ==========================================
+bin/
+obj/
+out/
+.vs/
+.idea/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.cache
+*.log
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Sekrety i lokalna konfiguracja (Connection Stringi, klucze JWT)
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# ==========================================
+# Node.js / React / Next.js
+# ==========================================
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+*.tsbuildinfo
+
+# Zmienne środowiskowe (klucze API, adresy backendu)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==========================================
+# Docker / PostgreSQL (lokalne wolumeny)
+# ==========================================
+# Jeśli mapujesz wolumen bazy do lokalnego folderu w projekcie (np. ./pgdata)
+pgdata/
+postgres_data/
+*.sql.gz
+*.dump
+
+# ==========================================
+# Systemowe (Windows / macOS / Linux)
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
