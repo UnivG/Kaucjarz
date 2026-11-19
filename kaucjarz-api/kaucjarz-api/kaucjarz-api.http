@@ -7,13 +7,12 @@ POST {{kaucjarz_api_HostAddress}}/User/PostUser
 Content-Type: application/json
 
 {
-    "id":2,
     "email":"testowymail@gm.co",
     "name":"tester2",
     "password":"test123"
 }
 ###
-GET {{kaucjarz_api_HostAddress}}/User/VerifyLogin
+Post {{kaucjarz_api_HostAddress}}/User/VerifyLogin
 Content-Type: application/json
 Accept: application/json
 

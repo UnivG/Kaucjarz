@@ -1,3 +1,4 @@
+using kaucjarz_api.DTO;
 using kaucjarz_api.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,15 +9,18 @@ namespace kaucjarz_api.Controllers;
 public class UserController:ControllerBase
 {
     private readonly AppDBContext _appDbContext;
-    public  UserController(AppDBContext appDbContext)
+    private readonly IPasswordHasher<User> _passwordHasher;
+    public  UserController(AppDBContext appDbContext, IPasswordHasher<User> passwordHasher)
     {
         _appDbContext=appDbContext;
+        _passwordHasher = passwordHasher;
     }
     [HttpGet("GetUser")]
-    public IEnumerable<User> Get(){
+    public IEnumerable<UserResponseDto> Get(){
         try
         {
-            return _appDbContext.Users.ToList();
+            var users = _appDbContext.Users.Select(x => new UserResponseDto(x.userId,x.name,x.email)).ToList<UserResponseDto>();
+            return users;
         }
         catch (Exception e)
         {
@@ -26,38 +30,48 @@ public class UserController:ControllerBase
     }
 
     [HttpPost("PostUser")]
-    public User Add(User user)
+    public ActionResult<UserResponseDto> Add(CreateUserDto request)
     {
-        try
+        var user = new User
         {
-            var passwordHasher = new PasswordHasher<User>();
-            user.password = passwordHasher.HashPassword(user, user.password);
-            _appDbContext.Users.Add(user);
+            name = request.Name,
+            email = request.Email
+        };
+
+        user.password = _passwordHasher.HashPassword(user, request.Password);
+
+        _appDbContext.Users.Add(user);
+        _appDbContext.SaveChanges();
+
+        return Ok(new UserResponseDto(user.userId, user.name, user.email));
+
+    }
+
+    [HttpPost("VerifyLogin")] 
+    public ActionResult<bool> VerifyLogin(LoginDto request)
+    {
+        var dbUser = _appDbContext.Users
+            .FirstOrDefault(x => x.name == request.Login || x.email == request.Login);
+
+        if (dbUser == null)
+        {
+            return Unauthorized(false);
+        }
+
+        var result = _passwordHasher.VerifyHashedPassword(dbUser, dbUser.password, request.Password);
+
+        if (result == PasswordVerificationResult.SuccessRehashNeeded)
+        {
+            dbUser.password = _passwordHasher.HashPassword(dbUser, request.Password);
             _appDbContext.SaveChanges();
-            return user;
         }
-        catch (Exception e)
+
+        if (result == PasswordVerificationResult.Failed)
         {
-            Console.WriteLine("Error during add user: " + e.Message);
-            throw;
+            return Unauthorized(false);
         }
-        
+
+        return Ok(true);
     }
-    
-    [HttpGet("VerifyLogin")]
-    public Boolean VerifyLogin(User user)
-    {
-        try
-        {
-            var passwordHasher=new PasswordHasher<User>();
-            var hashedPasssword=_appDbContext.Users.Where(x => x.name == user.name || x.email==user.email).Select(x=>x.password).FirstOrDefault()??"";
-            var result= passwordHasher.VerifyHashedPassword(user, hashedPasssword, user.password);
-            return result==PasswordVerificationResult.Success;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("error during verify login: " + e.Message);
-            return false;
-        }
-    }
+
 }

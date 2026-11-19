@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|c:\\programowanie\\kaucjarz\\kaucjarz\\kaucjarz-api\\kaucjarz-api\\kaucjarz-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|solutionrelative:kaucjarz-api\\kaucjarz-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|c:\\programowanie\\kaucjarz\\kaucjarz\\kaucjarz-api\\kaucjarz-api\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|solutionrelative:kaucjarz-api\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|c:\\programowanie\\kaucjarz\\kaucjarz\\kaucjarz-api\\kaucjarz-api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|solutionrelative:kaucjarz-api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|c:\\programowanie\\kaucjarz\\kaucjarz\\kaucjarz-api\\kaucjarz-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|solutionrelative:kaucjarz-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|c:\\programowanie\\kaucjarz\\kaucjarz\\kaucjarz-api\\kaucjarz-api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|solutionrelative:kaucjarz-api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|c:\\programowanie\\kaucjarz\\kaucjarz\\kaucjarz-api\\kaucjarz-api\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07A396F-3600-44FD-A1DD-CCE7E57B5B62}|kaucjarz-api\\kaucjarz-api.csproj|solutionrelative:kaucjarz-api\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "kaucjarz-api.http",
+              "DocumentMoniker": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\kaucjarz-api.http",
+              "RelativeDocumentMoniker": "kaucjarz-api\\kaucjarz-api.http",
+              "ToolTip": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\kaucjarz-api.http",
+              "RelativeToolTip": "kaucjarz-api\\kaucjarz-api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-11-19T12:30:52.736Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "kaucjarz-api\\AppDBContext.cs",
+              "ToolTip": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\AppDBContext.cs",
+              "RelativeToolTip": "kaucjarz-api\\AppDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T12:21:13.439Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Models\\DTO\\UserDTO.cs",
+              "RelativeDocumentMoniker": "kaucjarz-api\\Models\\DTO\\UserDTO.cs",
+              "ToolTip": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Models\\DTO\\UserDTO.cs",
+              "RelativeToolTip": "kaucjarz-api\\Models\\DTO\\UserDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T12:13:29.233Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Models\\User.cs",
+              "RelativeDocumentMoniker": "kaucjarz-api\\Models\\User.cs",
+              "ToolTip": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Models\\User.cs",
+              "RelativeToolTip": "kaucjarz-api\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T12:10:04.236Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Program.cs",
+              "RelativeDocumentMoniker": "kaucjarz-api\\Program.cs",
+              "ToolTip": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Program.cs",
+              "RelativeToolTip": "kaucjarz-api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T12:07:47.634Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "kaucjarz-api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\programowanie\\kaucjarz\\Kaucjarz\\kaucjarz-api\\kaucjarz-api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "kaucjarz-api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwD4AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T12:02:18.922Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
