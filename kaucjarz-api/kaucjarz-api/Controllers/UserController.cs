@@ -15,7 +15,7 @@ public class UserController:ControllerBase
         _appDbContext=appDbContext;
         _passwordHasher = passwordHasher;
     }
-    [HttpGet("GetUser")]
+    [HttpGet("GetUsers")]
     public IEnumerable<UserResponseDto> Get(){
         try
         {
@@ -32,20 +32,26 @@ public class UserController:ControllerBase
     [HttpPost("PostUser")]
     public ActionResult<UserResponseDto> Add(CreateUserDto request)
     {
-        var user = new User
+        try
         {
-            name = request.Name,
-            email = request.Email,
-            role = request.Role
-        };
+            var user = new User
+            {
+                name = request.Name,
+                email = request.Email,
+                role = request.Role
+            };
 
-        user.password = _passwordHasher.HashPassword(user, request.Password);
+            user.password = _passwordHasher.HashPassword(user, request.Password);
 
-        _appDbContext.Users.Add(user);
-        _appDbContext.SaveChanges();
+            _appDbContext.Users.Add(user);
+            _appDbContext.SaveChanges();
 
-        return Ok(new UserResponseDto(user.userId, user.name, user.email, user.balance, user.role.ToString()));
-
+            return Ok(new UserResponseDto(user.userId, user.name, user.email, user.balance, user.role.ToString()));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 
     [HttpPost("VerifyLogin")] 

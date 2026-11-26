@@ -9,7 +9,11 @@ public class AppDBContext(DbContextOptions<AppDBContext> options):DbContext(opti
     {
         modelBuilder.Entity<User>()
             .Property(u => u.role)
-            .HasConversion<string>(); // zamienia UserRole.USER <-> "USER" w Postgresie
+            .HasConversion<string>();
+        modelBuilder.Entity<Order>()
+        .Property(o => o.status)
+        .HasConversion<string>();
     }
     public DbSet<User> Users { get; set; }
+    public DbSet<Order> Orders { get; set; }
 }

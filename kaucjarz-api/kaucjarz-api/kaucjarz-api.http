@@ -1,8 +1,10 @@
 @kaucjarz_api_HostAddress = http://localhost:5223
 
-GET {{kaucjarz_api_HostAddress}}/User/GetUser/
+### Getting all users
+GET {{kaucjarz_api_HostAddress}}/User/GetUsers/
 Accept: application/json
-###
+
+### Adding new user
 POST {{kaucjarz_api_HostAddress}}/User/PostUser
 Content-Type: application/json
 
@@ -12,7 +14,8 @@ Content-Type: application/json
     "password":"test123",
     "role":0
 }
-###
+
+### Veryfying login logic
 Post {{kaucjarz_api_HostAddress}}/User/VerifyLogin
 Content-Type: application/json
 Accept: application/json
@@ -20,4 +23,23 @@ Accept: application/json
 {
   "login":"testowymail@gm.co",
   "password":"test123"
+}
+
+### Getting all orders
+GET {{kaucjarz_api_HostAddress}}/Order/GetOrders/
+Accept: application/json
+
+### Adding new order
+POST {{kaucjarz_api_HostAddress}}/Order/AddOrder
+Content-Type: application/json
+{
+    "userId": 1,
+    "city": "New York",
+    "street_address": "Downtown 13",
+    "flat_nr": "4A",
+    "estimated_bottles": 30,
+    "status": 0,
+    "pickup_date": "2026-11-27",
+    "pickup_time_slot": "14:00-16:00",
+    "details": "testing details"
 }
