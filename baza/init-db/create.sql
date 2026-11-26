@@ -17,7 +17,7 @@ CREATE TABLE orders (
     street_address VARCHAR(255) NOT NULL,
     flat_nr VARCHAR (20),
     estimated_bottles INT NOT NULL CHECK (estimated_bottles > 0),
-    status VARCHAR (50) NOT NULL DEFAULT 'OPEN',
+    status VARCHAR (50) NOT NULL DEFAULT 'OPEN', -- 'OPEN', 'ASSIGNED', 'PICKED_UP', 'COMPLETED', 'CANCELLED'
     pickup_date DATE NOT NULL,
     pickup_time_slot VARCHAR(20) NOT NULL,
     user_payout DECIMAL(10, 2) NULL,
