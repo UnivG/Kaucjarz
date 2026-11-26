@@ -13,7 +13,7 @@ CREATE TABLE orders (
     id_order SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES users (id_user),
     courier_id INTEGER REFERENCES users (id_user),
-    city VARCHAR(255) NOT NULL,
+    city VARCHAR(50) NOT NULL,
     street_address VARCHAR(255) NOT NULL,
     flat_nr VARCHAR (20),
     estimated_bottles INT NOT NULL CHECK (estimated_bottles > 0),
