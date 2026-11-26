@@ -40,7 +40,10 @@ public class UserController:ControllerBase
                 email = request.Email,
                 role = request.Role
             };
-
+            if (_appDbContext.Users.Any(u => u.email == request.Email))
+            {
+                return Conflict("User with this email already exists");
+            }
             user.password = _passwordHasher.HashPassword(user, request.Password);
 
             _appDbContext.Users.Add(user);
@@ -50,35 +53,45 @@ public class UserController:ControllerBase
         }
         catch (Exception e)
         {
-            return BadRequest(e.Message);
+            return StatusCode(500,"Error during adding new user");
         }
     }
 
     [HttpPost("VerifyLogin")] 
     public ActionResult<bool> VerifyLogin(LoginDto request)
     {
-        var dbUser = _appDbContext.Users
-            .FirstOrDefault(x => x.name == request.Login || x.email == request.Login);
-
-        if (dbUser == null)
+        try
         {
-            return Unauthorized(false);
+
+
+            var dbUser = _appDbContext.Users
+                .FirstOrDefault(x => x.name == request.Login || x.email == request.Login);
+
+            if (dbUser == null)
+            {
+                return Unauthorized(false);
+            }
+
+            var result = _passwordHasher.VerifyHashedPassword(dbUser, dbUser.password, request.Password);
+
+            if (result == PasswordVerificationResult.SuccessRehashNeeded)
+            {
+                dbUser.password = _passwordHasher.HashPassword(dbUser, request.Password);
+                _appDbContext.SaveChanges();
+            }
+
+            if (result == PasswordVerificationResult.Failed)
+            {
+                return Unauthorized(false);
+            }
+
+            return Ok(true);
         }
-
-        var result = _passwordHasher.VerifyHashedPassword(dbUser, dbUser.password, request.Password);
-
-        if (result == PasswordVerificationResult.SuccessRehashNeeded)
+        catch (Exception e)
         {
-            dbUser.password = _passwordHasher.HashPassword(dbUser, request.Password);
-            _appDbContext.SaveChanges();
+            Console.WriteLine("Login failed: "+e.Message);
+            return StatusCode(500,"Login failed");
         }
-
-        if (result == PasswordVerificationResult.Failed)
-        {
-            return Unauthorized(false);
-        }
-
-        return Ok(true);
     }
 
 }
