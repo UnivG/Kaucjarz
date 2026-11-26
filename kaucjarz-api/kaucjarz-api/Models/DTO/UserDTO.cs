@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using kaucjarz_api.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace kaucjarz_api.DTO;
 
@@ -13,7 +14,10 @@ public record CreateUserDto(
 
     [Required(ErrorMessage = "Password is required")]
     [MinLength(6, ErrorMessage = "Password is required to be at least 6 characters long.")]
-    string Password
+    string Password,
+
+    [Required(ErrorMessage = "Role is required")]
+    UserRole Role
 );
 
 public record LoginDto(
@@ -27,5 +31,7 @@ public record LoginDto(
 public record UserResponseDto(
     int Id,
     string Name,
-    string Email
+    string Email,
+    decimal Balance,
+    string Role
 );

@@ -6,7 +6,7 @@ namespace kaucjarz_api.Models;
 public class User
 {
     [Key]
-    [Column("id")]
+    [Column("id_user")]
     public int userId{get;set;}
     [Column("email")]
     public string email{get;set;}
@@ -14,4 +14,18 @@ public class User
     public string name{get;set;}
     [Column("password")]
     public string password{get;set;}
+    [Column("phone")]
+    public string? phone{get;set;}
+    [Column("balance")]
+    public decimal balance { get;set;}
+    [Column("role")]
+    public UserRole role { get;set;}
+
+
+}
+public enum UserRole
+{
+    USER=0,
+    ADMIN=1,
+    COURIER=2
 }

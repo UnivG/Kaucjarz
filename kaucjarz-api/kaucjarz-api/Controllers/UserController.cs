@@ -19,7 +19,7 @@ public class UserController:ControllerBase
     public IEnumerable<UserResponseDto> Get(){
         try
         {
-            var users = _appDbContext.Users.Select(x => new UserResponseDto(x.userId,x.name,x.email)).ToList<UserResponseDto>();
+            var users = _appDbContext.Users.Select(x => new UserResponseDto(x.userId,x.name,x.email,x.balance,x.role.ToString())).ToList<UserResponseDto>();
             return users;
         }
         catch (Exception e)
@@ -35,7 +35,8 @@ public class UserController:ControllerBase
         var user = new User
         {
             name = request.Name,
-            email = request.Email
+            email = request.Email,
+            role = request.Role
         };
 
         user.password = _passwordHasher.HashPassword(user, request.Password);
@@ -43,7 +44,7 @@ public class UserController:ControllerBase
         _appDbContext.Users.Add(user);
         _appDbContext.SaveChanges();
 
-        return Ok(new UserResponseDto(user.userId, user.name, user.email));
+        return Ok(new UserResponseDto(user.userId, user.name, user.email, user.balance, user.role.ToString()));
 
     }
 
